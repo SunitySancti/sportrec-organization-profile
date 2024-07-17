@@ -6,9 +6,9 @@ import type { RefObject } from 'react'
 export const useElementWidth = (ref: RefObject<HTMLElement>) => {
     
     const [width, setWidth] = useState(0);
+    const { current } = ref;
   
     useEffect(() => {
-        const { current } = ref;
         if(!current) {
             return
         }
@@ -23,7 +23,7 @@ export const useElementWidth = (ref: RefObject<HTMLElement>) => {
         return () => {
             resizeObserver.disconnect();
         }
-    },[ ref.current ]);
+    },[ current ]);
 
     return width
 }

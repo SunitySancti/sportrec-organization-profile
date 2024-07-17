@@ -1,9 +1,6 @@
-import { useState } from 'react'
-import { Navigate,
-        Routes,
-        Route, 
-        useNavigate,
-        Outlet } from 'react-router-dom'
+import { Routes,
+         Route,
+         Outlet } from 'react-router-dom'
 
 import './App.scss'
 import AppLayout from 'layouts/AppLayout'

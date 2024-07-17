@@ -1,11 +1,9 @@
 import './styles.scss'
 
-interface AchievementsViewProps {
-}
+// interface AchievementsViewProps {
+// }
 
-const AchievementsView = ({
-} : AchievementsViewProps
-) => {
+const AchievementsView = () => {
     return (
         <div className='app-header with-shadow'>
         </div>

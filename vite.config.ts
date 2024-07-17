@@ -5,6 +5,9 @@ import jsconfigPaths from "vite-jsconfig-paths"
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react(), jsconfigPaths()],
+    build: {
+        outDir: "build"
+    },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
