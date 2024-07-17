@@ -8,6 +8,12 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
+    /* Custom */
+    "baseUrl": "src",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "typeRoots" : ["./node_modules/@types", "src/typings"],
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,

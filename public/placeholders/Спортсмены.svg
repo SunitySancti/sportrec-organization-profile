@@ -1,0 +1,18 @@
+<svg width="371" height="767" viewBox="0 0 371 767" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="371" height="767" rx="20" fill="white"/>
+<rect width="331" height="26" transform="translate(20 24)" fill="#F8F8F9"/>
+<mask id="path-2-inside-1_1179_95480" fill="white">
+<path d="M20 74H351V114H20V74Z"/>
+</mask>
+<path d="M20 74H351V114H20V74Z" fill="#F8F8F9"/>
+<path d="M351 113H20V115H351V113Z" fill="#EEF0F7" mask="url(#path-2-inside-1_1179_95480)"/>
+<rect x="20" y="134" width="67" height="34" rx="8" fill="#F8F8F9"/>
+<rect x="95" y="134" width="67" height="34" rx="8" fill="#F8F8F9"/>
+<rect x="170" y="134" width="67" height="34" rx="8" fill="#F8F8F9"/>
+<rect x="245" y="134" width="67" height="34" rx="8" fill="#F8F8F9"/>
+<rect x="320" y="134" width="31" height="34" rx="8" fill="#F8F8F9"/>
+<rect x="20" y="188" width="331" height="40" rx="10" fill="#F8F8F9"/>
+<rect x="20" y="252" width="331" height="137" rx="15" fill="#F8F8F9"/>
+<rect x="20" y="401" width="331" height="40" rx="12" fill="#F8F8F9"/>
+<rect x="20" y="451" width="331" height="292" rx="12" fill="#F8F8F9"/>
+</svg>
