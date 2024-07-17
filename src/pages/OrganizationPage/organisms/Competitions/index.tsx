@@ -1,8 +1,8 @@
-import CompetitionsView from "./view";
+import CompetitionsView from './view.tsx'
 
 const Competitions = () => {
     return (
-        <CompetitionsView/>
+        <CompetitionsView isLoading/>
     );
 };
 

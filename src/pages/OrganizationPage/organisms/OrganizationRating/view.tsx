@@ -1,17 +1,21 @@
 import './styles.scss'
+import Placeholder from './placeholder'
+
 
 interface OrganizationRatingViewProps {
-
+    isLoading: boolean,
 }
 
 const OrganizationRatingView = ({
-
+    isLoading
 } : OrganizationRatingViewProps
 ) => {
     return (
-        <div className='organization-rating'>
-            Рейтинг организации
-        </div>
+        isLoading
+            ?   <Placeholder/>
+            :   <div className='organization-rating'>
+                    Рейтинг организации
+                </div>
     );
 };
 

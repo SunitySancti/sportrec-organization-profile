@@ -6,22 +6,22 @@ import './styles.scss'
 import { useElementWidth } from 'hooks'
 
 interface ReorderableLayoutProps {
-    children: ReactNode;
+    children: ReactNode,
     limits?: {
-        leftColumn: [number, number]; // [minWidth, maxWidth] in px
-        rightColumn: [number, number]; // [minWidth, maxWidth] in px
-    };
+        leftColumn: [number, number], // [minWidth, maxWidth] in px
+        rightColumn: [number, number], // [minWidth, maxWidth] in px
+    },
     ordering?: {
-        single?: number[]; // children's indexes
-        double?: [number[], number[]];
-    };
+        single?: number[], // children's indexes
+        double?: [number[], number[]],
+    },
     gap?: number // intercolumn gap in px
 }
 
 const ReorderableLayout = ({
-    ordering,
-    limits,
     children,
+    limits,
+    ordering,
     gap = 20
 } : ReorderableLayoutProps,
 ) => {

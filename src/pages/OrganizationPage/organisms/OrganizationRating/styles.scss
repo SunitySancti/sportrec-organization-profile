@@ -1,3 +1,12 @@
+@import '../../../../style-config';
+
 .organization-rating {
+    background-color: white;
+    border-radius: $lengthUnit;
+    overflow: hidden;
+    width: 100%;
     
+    &:not(svg) {
+        height: 440px;
+    }
 }

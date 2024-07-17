@@ -1,12 +1,10 @@
 @import '../../../../style-config';
 
-.organization-header {
+.event-block {
     background-color: white;
     border-radius: $lengthUnit;
     overflow: hidden;
     width: 100%;
-    
-    &:not(svg) {
-        height: 576px;
-    }
+    margin: auto;
+    height: 80px;
 }

@@ -1,0 +1,30 @@
+@import '../../style-config';
+
+.app-header {
+    background-color: white;
+    overflow: hidden;
+    width: 100%;
+    // top: -64px;
+    height: 64px;
+    // overflow: scroll;
+    // position: fixed;
+    position: relative;
+    z-index: 2;
+
+    &.with-shadow {
+        box-shadow: $scrollOverlay;
+    }
+}
+
+// .work-space {
+//     margin-top: 64px;
+//     overflow-y: auto;
+// }
+.work-space {
+    height: calc(100vh - 64px);
+    width: 100%;
+    background-color: $grayscale_20;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable both-edges;
+}

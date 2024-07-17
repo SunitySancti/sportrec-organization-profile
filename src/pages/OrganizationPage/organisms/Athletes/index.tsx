@@ -1,8 +1,8 @@
-import AthletesView from "./view";
+import AthletesView from './view.tsx'
 
 const Athletes = () => {
     return (
-        <AthletesView/>
+        <AthletesView isLoading/>
     );
 };
 

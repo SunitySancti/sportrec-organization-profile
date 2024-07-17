@@ -2,7 +2,7 @@ import AchievementsView from './view.tsx'
 
 const Achievements = () => {
     return (
-        <AchievementsView/>
+        <AchievementsView isLoading/>
     );
 };
 

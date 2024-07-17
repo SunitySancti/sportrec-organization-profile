@@ -2,7 +2,7 @@ import OrganizationRatingView from './view'
 
 const OrganizationRating = () => {
     return (
-        <OrganizationRatingView/>
+        <OrganizationRatingView isLoading/>
     );
 };
 

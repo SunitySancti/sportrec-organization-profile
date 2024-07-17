@@ -1,12 +1,15 @@
 import { Outlet } from 'react-router-dom'
 
+import AppHeader from './view'
+
+
 const AppLayout = () => {
     return (
         <>
-            <div>
-                AppHeader
+            <AppHeader/>
+            <div className='work-space'>
+                <Outlet/>
             </div>
-            <Outlet/>
         </>
     );
 };

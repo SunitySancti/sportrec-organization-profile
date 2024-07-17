@@ -1,3 +1,12 @@
+@import '../../../../style-config';
+
 .athletes {
+    background-color: white;
+    border-radius: $lengthUnit;
+    overflow: hidden;
+    width: 100%;
     
+    &:not(svg) {
+        height: 767px;
+    }
 }

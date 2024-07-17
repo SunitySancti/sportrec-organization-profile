@@ -1,0 +1,8 @@
+@import '../../style-config';
+
+.organization-page {
+    display: flex;
+    flex-flow: column;
+    gap: $lengthUnit;
+    padding: $lengthUnit 0;
+}

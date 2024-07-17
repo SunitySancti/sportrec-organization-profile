@@ -1,17 +1,20 @@
 import './styles.scss'
+import Placeholder from './placeholder'
 
 interface CompetitionsViewProps {
-
+    isLoading: boolean,
 }
 
 const CompetitionsView = ({
-
+    isLoading,
 } : CompetitionsViewProps
 ) => {
     return (
-        <div className='competitions'>
-            Соревнования
-        </div>
+        isLoading
+            ?   <Placeholder/>
+            :   <div className='competitions'>
+                    CompetitionsView
+                </div>
     );
 };
 

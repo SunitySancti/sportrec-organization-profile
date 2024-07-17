@@ -1,8 +1,8 @@
-import OrganizationHeaderView from "./view";
+import OrganizationHeaderView from './view.tsx'
 
 const OrganizationHeader = () => {
     return (
-        <OrganizationHeaderView/>
+        <OrganizationHeaderView isLoading/>
     );
 };
 

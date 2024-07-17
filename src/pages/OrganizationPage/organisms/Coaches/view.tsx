@@ -1,17 +1,20 @@
 import './styles.scss'
+import Placeholder from './placeholder'
 
 interface CoachesViewProps {
-
+    isLoading: boolean,
 }
 
 const CoachesView = ({
-
+    isLoading,
 } : CoachesViewProps
 ) => {
     return (
-        <div className='coaches'>
-            Тренеры
-        </div>
+        isLoading
+            ?   <Placeholder/>
+            :   <div className='coaches'>
+                    CoachesView
+                </div>
     );
 };
 

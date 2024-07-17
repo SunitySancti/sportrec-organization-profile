@@ -1,3 +1,12 @@
+@import '../../../../style-config';
+
 .competitions {
-    
+    background-color: white;
+    border-radius: $lengthUnit;
+    overflow: hidden;
+    width: 100%;
+
+    &:not(svg) {
+        height: 568px;
+    }
 }

@@ -1,17 +1,20 @@
 import './styles.scss'
+import Placeholder from './placeholder'
 
 interface OrganizationManagementViewProps {
-
+    isLoading: boolean,
 }
 
 const OrganizationManagementView = ({
-
+    isLoading,
 } : OrganizationManagementViewProps
 ) => {
     return (
-        <div className='organization-management'>
-            Руководство
-        </div>
+        isLoading
+            ?   <Placeholder/>
+            :   <div className='organization-management'>
+                    OrganizationManagementView
+                </div>
     );
 };
 

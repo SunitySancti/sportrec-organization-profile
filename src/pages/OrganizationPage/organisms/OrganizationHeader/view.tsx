@@ -1,17 +1,20 @@
 import './styles.scss'
+import Placeholder from './placeholder'
 
 interface OrganizationHeaderViewProps {
-
+    isLoading: boolean,
 }
 
 const OrganizationHeaderView = ({
-
+    isLoading,
 } : OrganizationHeaderViewProps
 ) => {
     return (
-        <div className='organization-header'>
-            Региональная общественная организация "Федерация спорта Алтайского края"
-        </div>
+        isLoading
+            ?   <Placeholder/>
+            :   <div className='organization-header'>
+                    OrganizationHeaderView
+                </div>
     );
 };
 
