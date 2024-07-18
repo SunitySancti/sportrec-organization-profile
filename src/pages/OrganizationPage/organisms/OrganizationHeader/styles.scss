@@ -6,7 +6,252 @@
     overflow: hidden;
     width: 100%;
     
+    // not placeholder
     &:not(svg) {
         height: 576px;
+        position: relative;
+
+        .avatar {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            top: 4 * $lengthUnit;
+            left: $lengthUnit;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                background-color: $grayscale_10;
+                object-fit: contain;
+            }
+
+            .flag {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 30px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                overflow: hidden;
+
+                &.rus {
+                    display: flex;
+                    flex-direction: column;
+                    div {
+                        width: 100%;
+                        height: 33.3%;
+                        &:nth-child(1) {
+                            background-color: #EEEEEE;
+                        }
+                        &:nth-child(2) {
+                            background-color: #22408C;
+                        }
+                        &:nth-child(3) {
+                            background-color: #CE2028;
+                        }
+                    }   
+                }
+            }
+        }
+
+        .header {
+            height: 134px;
+            background: linear-gradient(to right, #09043E, #29208B);
+        }
+
+        .body {
+            position: relative;
+    
+            .dot {
+                width: 3px;
+                height: 3px;
+                background-color: $grayscale_30;
+                border-radius: 50%;
+                flex: 0 0 auto;
+            }
+
+            .rating-tag {
+                position: absolute;
+                top: 14px;
+                right: 16px;
+                background-color: $grayscale_10;
+                padding: 7px 14px 7px 10px;
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 4px;
+                align-items: center;
+                border-radius: 11px;
+                @include typo16($grayscale_50);
+
+                span {
+                    margin-top: 3px;
+                }
+            }
+
+            .info {
+                position: relative;
+                top: 102px;
+                margin: 0 $lengthUnit;
+                display: flex;
+                flex-flow: column;
+                gap: 16px;
+                // left: 20px;
+                
+                .title-container {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    gap: 8px;
+                    height: 68px;
+
+                    .title {
+                        @include typo30();
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                .location-and-sport-types {
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    gap: 6px;
+                    height: fit-content;
+    
+                    .location {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        gap: 4px;
+                    }
+    
+                    span {
+                        display: block;
+                        @include typo14($grayscale_40);
+                        height: fit-content;
+                    }
+                }
+
+                .human-resources {
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    gap: 8px;
+
+                    .people-counter {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        gap: 6px;
+                        height: fit-content;
+
+                        span {
+                            &:first-child {
+                                @include typo14($grayscale_70);
+                            }
+                            &:last-child {
+                                @include typo14($grayscale_40);
+                            }
+                        }
+                    }
+
+                    .athletes-info {
+                        position: relative;
+                        display: flex;
+                        flex-flow: row wrap;
+                        gap: 8px;
+
+                        .imgs {
+                            display: flex;
+                            flex-flow: row wrap;
+                            height: fit-content;
+
+                            .img-container {
+                                width: 15px;
+                                height: 22px;
+                            }
+                            img {
+                                width: 22px;
+                                height: 22px;
+                                border-radius: 50%;
+                                border: solid 1px white;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+
+                    .teams-info {
+                        position: relative;
+                        display: flex;
+                        flex-flow: row wrap;
+                        gap: 6px;
+
+                        .initials {
+                            display: flex;
+                            flex-flow: row wrap;
+                            height: fit-content;
+
+                            .container {
+                                height: fit-content;
+
+                                &:not(:last-child) {
+                                    width: 11px;
+                                }
+                                &:last-child {
+                                    width: fit-content;
+                                }
+
+                                div {
+                                    width: 18px;
+                                    height: 18px;
+                                    border-radius: 50%;
+                                    border: solid 1px white;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font: 700 8px/6px 'Inter', sans-serif;
+                                    color: white;
+                                }
+                            }
+                        } 
+                    }
+                }
+
+                .awards {
+                    display: flex;
+                    flex-flow: row wrap;
+                    gap: 8px;
+
+                    > div {
+                        display: flex;
+                        flex-flow: row wrap;
+                        align-items: center;
+                        gap: 8px;
+                        padding: 8px 10px;
+                        border-radius: 8px;
+                        background-color: $grayscale_10;
+                        @include typo12($grayscale_50);
+
+                        &::before {
+                            content: '';
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                        }
+
+                        &.gold::before {
+                            background: linear-gradient(to left, #BE823B, #D0A461, #FED5A5);
+                        }
+
+                        &.silver::before {
+                            background: linear-gradient(to left, #878788, #BFC0C5, #939499);
+                        }
+
+                        &.bronze::before {
+                            background: linear-gradient(to left, #74391D, #C46236, #FF9B67);
+                        }
+                    } 
+                }
+            }
+
+        }
     }
 }

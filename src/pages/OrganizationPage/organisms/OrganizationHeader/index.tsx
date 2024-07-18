@@ -2,7 +2,7 @@ import OrganizationHeaderView from './view.tsx'
 
 const OrganizationHeader = () => {
     return (
-        <OrganizationHeaderView isLoading/>
+        <OrganizationHeaderView/>
     );
 };
 
