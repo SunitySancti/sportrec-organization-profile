@@ -1,0 +1,107 @@
+@import '../../style-config';
+
+.button {
+    position: relative;
+    height: 2 * $lengthUnit;
+    min-width: 2 * $lengthUnit;
+    outline: none;
+    border: none;
+    border-radius: $lengthUnit / 2;
+    @include typo14();
+
+    &.iconic:not(.text) {
+        width: 2 * $lengthUnit;
+        .icon {
+            @include centerize();
+        }
+    }
+    &.text {
+        padding: 10px 24px;
+    }
+
+    // color styles:
+
+    &:not(.clear) .icon svg {
+        fill: currentColor;
+    }
+
+    &.primary {
+        &:disabled {
+            background-color: $grayscale_30;
+            color: $grayscale_40;
+        }
+        &.loading {
+            background-color: $grayscale_70;
+        }
+        &:not(:disabled):not(.loading) {
+            color: $grayscale_00;
+
+            &:not(:hover):not(:active):not(.pressed) {
+                background-color: $grayscale_70;
+            }
+            &:hover {
+                background-color: $grayscale_60;
+            }
+            &:active,
+            &.pressed {
+                background-color: $grayscale_80;
+            }
+        }
+    }
+
+    &.secondary {
+        &:disabled,
+        &.loading {
+            background-color: $grayscale_20;
+            color: $grayscale_30;
+        }
+        &:not(:disabled):not(.loading) {
+            color: $grayscale_70;
+
+            &:not(:hover):not(:active):not(.pressed) {
+                background-color: $grayscale_20;
+            }
+            &:hover {
+                background-color: $grayscale_10;
+            }
+            &:active,
+            &.pressed {
+                background-color: $grayscale_30;
+            }
+        }
+    }
+
+    &.clear {
+        background: none;
+
+        &:disabled {
+            color: $grayscale_30;
+            fill: $grayscale_30;
+        }
+        &:not(:disabled):not(.loading) {
+            &:not(:hover):not(:active):not(.pressed) {
+                color: $grayscale_60;
+                fill: $grayscale_30;
+            }
+            &:hover {
+                color: $grayscale_50;
+                fill: $grayscale_30;
+            }
+            &:active,
+            &.pressed {
+                color: $grayscale_70;
+                fill: $grayscale_50;
+            }
+        }
+    }
+
+    &.social-media.iconic.secondary:not(.text) svg {
+        fill: $grayscale_50 !important;
+    }
+
+    &.loading {
+        span, svg {
+            opacity: 0;
+        }
+    }
+}

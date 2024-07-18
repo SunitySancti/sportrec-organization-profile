@@ -4,22 +4,35 @@
     background-color: white;
     overflow: hidden;
     width: 100%;
-    // top: -64px;
     height: 64px;
-    // overflow: scroll;
-    // position: fixed;
     position: relative;
     z-index: 2;
 
     &.with-shadow {
         box-shadow: $scrollOverlay;
     }
+
+    // temporary styles
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    a {
+        @include typo16();
+        text-decoration: none;
+        padding: $lengthUnit;
+
+        &:not(.active) {
+            color: $grayscale_50;
+        }
+        &.active {
+            color: $grayscale_70;
+            border-bottom: solid 2px $grayscale_70;
+        }
+    }
 }
 
-// .work-space {
-//     margin-top: 64px;
-//     overflow-y: auto;
-// }
 .work-space {
     height: calc(100vh - 64px);
     width: 100%;

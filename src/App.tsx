@@ -1,6 +1,7 @@
 import { Routes,
          Route,
-         Outlet } from 'react-router-dom'
+         Outlet,
+         Navigate } from 'react-router-dom'
 
 import './App.scss'
 import AppLayout from 'layouts/AppLayout'
@@ -13,10 +14,12 @@ const App = () => {
             <Routes>
                 <Route path='/' element={ <AppLayout/> }>
                     <Route path='organizations' element={ <Outlet/> }>
+                        <Route index element={ <Navigate to='/organizations/altay' replace/> }/>
                         {/* <Route index element={ <OrganizationsPage/> }/> */}
                         <Route path=':organizationId' element={ <OrganizationPage/> }/>
                     </Route>
                 </Route>
+                <Route path='*' element={ <Navigate to='/organizations/altay' replace/> }/>
             </Routes>
         </>
     )

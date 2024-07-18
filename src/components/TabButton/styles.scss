@@ -1,0 +1,45 @@
+@import '../../style-config';
+
+.tab-button {
+    padding: 8px 10px 24px;
+    @include typo14();
+    
+    &.disabled {
+        color: $grayscale_30;
+        pointer-events: none;
+    }
+    &:not(.disabled) {
+        cursor: default
+    }
+
+    &.active {
+        border-bottom: solid 2px currentColor;
+
+        &:not(.disabled) {
+            &:not(:hover):not(:active) {
+                color: $grayscale_70;
+            }
+            &:hover {
+                color: $grayscale_50;
+            }
+            &:active {
+                color: $grayscale_80;
+            }
+        }
+    }
+    &:not(.active) {
+        border: none;
+
+        &:not(.disabled) {
+            &:not(:hover):not(:active) {
+                color: $grayscale_50;
+            }
+            &:hover {
+                color: $grayscale_40;
+            }
+            &:active {
+                color: $grayscale_60;
+            }
+        }
+    }
+}

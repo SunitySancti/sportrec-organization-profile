@@ -1,62 +1,67 @@
+import { useState } from 'react'
+
 import './styles.scss'
 import Placeholder from './placeholder'
+import Button from 'components/Button'
+import TabButton from 'components/TabButton'
+
 
 interface OrganizationHeaderViewProps {
     isLoading?: boolean,
+    response: any
 }
 
-interface Team {
-    id: number,
-    color: string,
-    initials: string
-}
+
+
+
+// const response = {
+//     title: 'Региональная общественная организация "Федерация спорта Алтайского края"',
+//     imgPath: '/altay.png',
+//     country: 'rus',
+//     location: 'Алтайский край',
+//     sportTypes: ['Грэпплинг', 'Греко-римская борьба', 'Пляжная борьба'],
+//     ratingPosition: 2,
+//     athletIds: [...Array(45)].map((_u, i) => i),
+//     nSubscribers: 125,
+//     teams: [...Array(12)].map((_u, i) => ({
+//         id: i,
+//         color: randomRGB(),
+//         initials: randomInitials()
+//     })),
+//     awards: [12, 4, 19] as const
+// }
+
+// const response2 = {
+//     title: 'Попов Александр Александрович',
+//     imgPath: 'https://img.hhcdn.ru/photo/758390667.jpeg?t=1721314518&h=zHHiveEpkMloflMZSijFUA',
+//     country: 'rus',
+//     location: 'Москва',
+//     sportTypes: ['React', 'Redux', 'Typescript', 'Express'],
+//     ratingPosition: 1,
+//     athletIds: [],
+//     nSubscribers: 0,
+//     teams: [],
+//     awards: [2, 0, 0] as const,
+//     hhLink: 'https://hh.ru/resume/ae6dcea4ff0201f0130039ed1f7a307934436a',
+//     telegramLink: 'https://t.me/SunitySancti'
+// }
 
 
 const OrganizationHeaderView = ({
     isLoading,
+    response
 } : OrganizationHeaderViewProps
 ) => {
-    const randomRGB = () => 'rgb(' + [...Array(3)].map(_u => {
-        return Math.floor(Math.random() * 256)
-    }).join(', ') + ')';
 
-    const randomInitials = () =>  [...Array(2)].map(_u => {
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        return chars.charAt(Math.floor(Math.random() * chars.length))
-    }).join('');
+    // Это должно лежать в index.tsx, разумеется
+    const [isCompetitions, setIsCompetitions] = useState(true);
+    const [isSubscribing, setIsSubscribing] = useState(true);
+    const [isGettingMore, setIsGettingMore] = useState(false);
+    const [isSharing, setIsSharing] = useState(false);
+    const [isInstagramming, setIsInstagramming] = useState(false);    
+    const [isVKing, setIsVKing] = useState(false);    
+    const [isTelegramming, setIsTelegramming] = useState(false);    
 
-    const response = {
-        title: 'Региональная общественная организация "Федерация спорта Алтайского края"',
-        imgPath: '/altay.png',
-        country: 'rus',
-        location: 'Алтайский край',
-        sportTypes: ['Грэпплинг', 'Греко-римская борьба', 'Пляжная борьба'],
-        ratingPosition: 2,
-        athletIds: [...Array(45)].map((_u, i) => i),
-        nSubscribers: 125,
-        teams: [...Array(12)].map((_u, i) => ({
-            id: i,
-            color: randomRGB(),
-            initials: randomInitials()
-        })),
-        awards: [12, 4, 19] as const
-    }
-    const response2 = {
-        title: 'Попов Александр Александрович',
-        imgPath: 'https://img.hhcdn.ru/photo/758390667.jpeg?t=1721314518&h=zHHiveEpkMloflMZSijFUA',
-        country: 'rus',
-        location: 'Алтайский край',
-        sportTypes: ['Грэпплинг', 'Греко-римская борьба', 'Пляжная борьба'],
-        ratingPosition: 2,
-        athletIds: [...Array(45)].map((_u, i) => i),
-        nSubscribers: 125,
-        teams: [...Array(12)].map((_u, i) => ({
-            id: i,
-            color: randomRGB(),
-            initials: randomInitials()
-        })),
-        awards: [12, 4, 19] as const
-    }
 
     const { title,
             imgPath,
@@ -67,7 +72,9 @@ const OrganizationHeaderView = ({
             athletIds,
             nSubscribers,
             teams,
-            awards } = response
+            awards,
+            hhLink,
+            telegramLink } = response
 
     const [ gold, silver, bronze ] = awards || [];
 
@@ -78,7 +85,7 @@ const OrganizationHeaderView = ({
 
                     <div className='avatar'>
                         <img src={ imgPath }/>
-                        <div className='rus flag'>
+                        <div className={ country + 'flag' }>
                             <div/><div/><div/>
                         </div>
                     </div>
@@ -159,11 +166,11 @@ const OrganizationHeaderView = ({
                                             <div className='container'>
                                                 <div
                                                     style={{
-                                                        backgroundColor: team.color,
+                                                        backgroundColor: team?.color,
                                                     }}
-                                                    key={ team.id }
+                                                    key={ team?.id }
                                                 >
-                                                    { team.initials }
+                                                    { team?.initials }
                                                 </div>
                                             </div>
                                         ))}
@@ -176,29 +183,94 @@ const OrganizationHeaderView = ({
                             </div>
 
                             <div className='awards'>
-                                { gold && (
-                                    <div className='gold'>
-                                        <span>{ gold }</span>
-                                    </div>
-                                )}
-                                { silver && (
-                                    <div className='silver'>
-                                        <span>{ silver }</span>
-                                    </div>
-                                )}
-                                { bronze && (
-                                    <div className='bronze'>
-                                        <span>{ bronze }</span>
-                                    </div>
-                                )}
+                                <div className='gold'>
+                                    <span>{ gold }</span>
+                                </div>
+                                <div className='silver'>
+                                    <span>{ silver }</span>
+                                </div>
+                                <div className='bronze'>
+                                    <span>{ bronze }</span>
+                                </div>
                             </div>
                         </div>
 
-                        <div className='actions'></div>
-                        <div className='tabs'></div>
+                        <div className='actions'>
+                            <Button 
+                                kind='primary'
+                                text='Подписаться'
+                                isLoading={ isSubscribing }
+                                onClick={() => {
+                                    if(!isSubscribing && hhLink) {
+                                        window.open(hhLink, '_blank')
+                                        return
+                                    }
+                                    setIsSubscribing(!isSubscribing)
+                                }}
+                            />
+                            <Button 
+                                kind='secondary'
+                                text='Подробнее'
+                                isLoading={ isGettingMore }
+                                onClick={() => {
+                                    if(!isGettingMore && hhLink) {
+                                        window.open(hhLink, '_blank')
+                                        return
+                                    }
+                                    setIsGettingMore(!isGettingMore)
+                                }}
+                            />
+                            <Button 
+                                kind='secondary'
+                                icon='share'
+                                isLoading={ isSharing }
+                                onClick={() => setIsSharing(!isSharing)}
+                            />
+                            <div className='space'/>
+                            <Button 
+                                kind='secondary'
+                                icon='instagram'
+                                className='social-media'
+                                isLoading={ isInstagramming }
+                                onClick={() => setIsInstagramming(!isInstagramming)}
+                            />
+                            <Button 
+                                kind='secondary'
+                                icon='vk'
+                                className='social-media'
+                                isLoading={ isVKing }
+                                onClick={() => setIsVKing(!isVKing)}
+                            />
+                            <Button 
+                                kind='secondary'
+                                icon='telegram'
+                                className='social-media'
+                                isLoading={ isTelegramming }
+                                onClick={() => {
+                                    if(!isTelegramming && telegramLink) {
+                                        window.open(telegramLink, '_blank')
+                                        return
+                                    }
+                                    setIsTelegramming(!isTelegramming)
+                                }}
+                            />
+                        </div>
+                        <div className='lower-space'/>
+                        <div className='tabs'>
+                            <TabButton
+                                text='Соревнования'
+                                isActive={ isCompetitions }
+                                onClick={ () => setIsCompetitions(true) }
+                            />
+                            <TabButton
+                                text='Новости'
+                                isActive={ !isCompetitions }
+                                onClick={ () => setIsCompetitions(false) }
+                            />
+                        </div>
                     </div>
                 </div>
     );
 };
 
-export default OrganizationHeaderView;
+export default OrganizationHeaderView

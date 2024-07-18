@@ -8,7 +8,6 @@
     
     // not placeholder
     &:not(svg) {
-        height: 576px;
         position: relative;
 
         .avatar {
@@ -91,18 +90,18 @@
 
             .info {
                 position: relative;
-                top: 102px;
-                margin: 0 $lengthUnit;
+                padding-top: 102px;
+                margin: 0 $lengthUnit 0;
                 display: flex;
                 flex-flow: column;
                 gap: 16px;
-                // left: 20px;
+                height: fit-content;
                 
                 .title-container {
                     display: flex;
                     flex-flow: row nowrap;
                     gap: 8px;
-                    height: 68px;
+                    max-height: 68px;
 
                     .title {
                         @include typo30();
@@ -252,6 +251,31 @@
                 }
             }
 
+            .actions {
+                display: flex;
+                flex-flow: row wrap;
+                margin: $lengthUnit * 2 $lengthUnit 0;
+                gap: $lengthUnit / 2;
+
+                .space {
+                    flex: 1
+                }
+            }
+
+            .lower-space {
+                width: 100%;
+                height: 68px;
+                background: none;
+            }
+
+            .tabs {
+                margin: 0 $lengthUnit;
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                flex-flow: row wrap;
+                gap: 16px;
+            }
         }
     }
 }
