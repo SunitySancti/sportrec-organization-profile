@@ -6,7 +6,7 @@
     min-width: 2 * $lengthUnit;
     outline: none;
     border: none;
-    border-radius: $lengthUnit / 2;
+    border-radius: calc($lengthUnit / 2);
     @include typo14();
 
     &.iconic:not(.text) {

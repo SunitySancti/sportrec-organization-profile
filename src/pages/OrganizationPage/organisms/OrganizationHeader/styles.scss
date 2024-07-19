@@ -255,7 +255,7 @@
                 display: flex;
                 flex-flow: row wrap;
                 margin: $lengthUnit * 2 $lengthUnit 0;
-                gap: $lengthUnit / 2;
+                gap: calc($lengthUnit / 2);
 
                 .space {
                     flex: 1

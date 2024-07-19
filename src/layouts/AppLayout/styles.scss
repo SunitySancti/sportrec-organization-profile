@@ -8,10 +8,6 @@
     position: relative;
     z-index: 2;
 
-    &.with-shadow {
-        box-shadow: $scrollOverlay;
-    }
-
     // temporary styles
     display: flex;
     flex-flow: row nowrap;
@@ -30,6 +26,10 @@
             color: $grayscale_70;
             border-bottom: solid 2px $grayscale_70;
         }
+    }
+
+    &.with-shadow {
+        box-shadow: $scrollOverlay;
     }
 }
 
