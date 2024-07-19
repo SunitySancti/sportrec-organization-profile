@@ -15,7 +15,7 @@ const Preloader = ({
     const className = `preloader dots ${ isLoading ? 'loading ' : '' }${ kind }`;
     return (
         <div {...{ className }}>
-            {[...Array(num)].map(_u => <div/>)}
+            {[...Array(num)].map((_u, idx) => <div key={ idx }/>)}
         </div>
     );
 };

@@ -1,0 +1,79 @@
+@import '../../style-config';
+
+.rating-chart {
+    display: flex;
+    flex-flow: column;
+    gap: 0;
+    width: 100%;
+
+    > div {
+        width: 100%;
+    }
+
+    .graphic {
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-end;
+        gap: 0;
+        height: 160px;
+
+        .end-line {
+            height: 100%;
+            width: 1px;
+            background-color: $green_1;
+            z-index: 1;
+        }
+
+        .hor-line {
+            position: relative;
+            width: 100%;
+            border-top: solid 1px $grayscale_20;
+        }
+
+        .rating-diff-tag {
+            position: absolute;
+            display: flex;
+            flex-flow: row nowrap;
+            padding: 0 3px 0 7px;
+            background-color: $green_1;
+            border: solid 1px #38C972;
+            border-radius: 10px;
+            font: $Inter_SB_12pt;
+            color: $grayscale_00;
+            fill: $grayscale_00;
+            z-index: 1;
+
+            left: 0;
+            top: $lengthUnit;
+            transform: translateX(-50%);
+        }
+    }
+
+    .timeline-pointers {
+        display: flex;
+        height: 10px;
+        border-top: solid 1px $grayscale_20;
+        border-left: solid 1px $grayscale_20;
+        border-right: solid 1px $grayscale_20;
+
+        &::before {
+            content: '';
+            width: 1px;
+            height: 100%;
+            margin: auto;
+            background-color: $grayscale_20;
+        }
+    }
+
+    .timeline.year {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        span {
+            font: $Inter_M_10pt;
+            color: $grayscale_40;
+        }
+    }
+}

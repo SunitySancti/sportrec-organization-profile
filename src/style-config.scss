@@ -19,21 +19,26 @@ $grayscale_60: #353754;
 $grayscale_70: #06082C;
 $grayscale_80: #03051C;
 
+$green_1: #31C16B;
+
 // Shadows:
 $scrollOverlay: 0 6px 6px 0 rgba(135, 128, 128, 0.09), 0 11px 11px 0 rgba(0,0,0,.04);
 
 //fonts
+$Inter_M_10pt: 500 10px/14px 'Inter', sans-serif;
+$Inter_SB_12pt: 600 12px/18px 'Inter', sans-serif;
 $Inter_SB_14pt: 548 14px/20px 'Inter', sans-serif;
+$Inter_SB_20pt: 600 20px/26px 'Inter', sans-serif;
 $Inter_SB_30pt: 600 30px/32px 'Inter', sans-serif;
 
 @mixin typo12($color) {
-    font: 600 12px/18px 'Inter', sans-serif;
+    font: $Inter_SB_12pt;
     letter-spacing: -0.1px;
     color: $color;
     text-align: left;
 }  
 @mixin typo14($color: unset) {
-    font: 548 14px/20px 'Inter', sans-serif;
+    font: $Inter_SB_14pt;
     letter-spacing: -0.005em;
     color: $color;
 }

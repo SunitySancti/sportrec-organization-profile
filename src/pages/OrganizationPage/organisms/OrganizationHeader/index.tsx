@@ -32,7 +32,7 @@ const OrganizationHeader = () => {
             }
         :   {
                 title: 'Региональная общественная организация "Федерация спорта Алтайского края"',
-                imgPath: '/altay.png',
+                imgPath: '/pict/altay.png',
                 country: 'rus',
                 location: 'Алтайский край',
                 sportTypes: ['Грэпплинг', 'Греко-римская борьба', 'Пляжная борьба'],

@@ -9,4 +9,35 @@
     &:not(svg) {
         height: 440px;
     }
+
+    
+}
+.rating-description {
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: solid 1px $grayscale_20;
+    display: flex;
+    flex-flow: column;
+    gap: 12px;
+    .header {
+        display: flex;
+        flex-flow: column;
+        gap: 12px;
+        div {
+            width: 202px;
+            height: 32px;
+            border-radius: 8px;
+            background-color: $grayscale_20;
+        }
+        .data {
+            width: 202px;
+            height: 32px;
+            border-radius: 8px;
+            background-color: $grayscale_20;
+        }
+    }
+    .body {
+        font: $Inter_SB_12pt;
+        color: $grayscale_70;
+    }
 }
